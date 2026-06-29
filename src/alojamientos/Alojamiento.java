@@ -14,7 +14,7 @@ public class Alojamiento {
     private int tipoHabitacion;
     private int capacidad;
     private int precio;
-    private boolean estado;
+    private String estado;
 
     
     
@@ -39,7 +39,7 @@ public class Alojamiento {
         return this.precio;
     }
 
-    public boolean isEstado() {
+    public String isEstado() {
         return this.estado;
     }
     
@@ -47,7 +47,7 @@ public class Alojamiento {
         return this.precio;
     }
     
-    public boolean setEstado(){
+    public String setEstado(){
         return estado;
     }
 
@@ -56,16 +56,12 @@ public class Alojamiento {
         this.nombre = nombre;
         this.capacidad = capacidad;
         this.precio = this.precio=20000;
-        this.estado = this.estado = false;
+        this.estado = this.estado = "Disponible" ;
+    }
+
+    public Alojamiento(int tipoHabitacion) {
+        this.tipoHabitacion = tipoHabitacion;
     }
     
-    public void tipoHabitacion(int tipoHabitacion){
-        if (tipoHabitacion==1) {
-            System.out.println("Es habitacion");
-        }else{
-            System.out.println("Es Cabaña");
-        }
- 
-    }
     
 }
