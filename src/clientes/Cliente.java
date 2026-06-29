@@ -5,7 +5,6 @@
 package clientes;
 
 import java.time.LocalDate;
-import static java.time.LocalDate.now;
 import java.time.Period;
 
 /**
@@ -60,9 +59,9 @@ public class Cliente {
         this.correoElectronico = correoElectronico;
     }  
     
-    public void getEdad() {
-       return Period.between(fechaNacimiento, LocalDate.now().getYear());
-              
+   
+    public Period getEdad(){
+        return Period.between(fechaNacimiento, LocalDate.now());
     }
 
     public Cliente(int identificacion, String nombreCompleto, LocalDate fechaNacimiento, int telefono, String correoElectronico, String pais) {
@@ -77,7 +76,8 @@ public class Cliente {
     @Override
     public String toString() {
         return "\nIdentificacion: " + identificacion + "\nNombre Completo: " + nombreCompleto + 
-                "\nFecha Nacimiento: " + fechaNacimiento + "\nTelefono: " + telefono + 
+                "\nFecha Nacimiento: " + fechaNacimiento + "\nEdad: " + getEdad() + "años" +
+                "\nTelefono: " + telefono + 
                 "\nCorreo Electronico: " + correoElectronico + ", pais: " + pais;
     }
     
